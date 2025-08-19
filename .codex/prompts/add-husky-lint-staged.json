@@ -1,0 +1,14 @@
+{
+  "task": "Add Husky and lint-staged with format + lint on pre-commit",
+  "instructions": [
+    "Read the configuration file .codex.json in the project root and follow its rules.",
+    "Create new branch codex/add-husky-lint-staged from origin/main branch.",
+    "Install husky and lint-staged as development dependencies.",
+    "Initialize husky in the repository and enable Git hooks.",
+    "Configure a pre-commit hook that runs lint-staged.",
+    "Configure lint-staged to run `npm run format` and `npm run lint` on staged files.",
+    "Verify the configuration by simulating a commit with staged files.",
+    "Execute npm run format to format the code.",
+    "Execute npm run lint to lint the code."
+  ]
+}

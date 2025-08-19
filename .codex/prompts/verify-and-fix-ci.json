@@ -1,0 +1,14 @@
+{
+  "task": "Verify and fix CI jobs in .github/workflows/ci.yml",
+  "instructions": [
+    "Read the configuration file .codex.json in the project root and follow its rules.",
+    "Create new branch codex/verify-and-fix-ci from origin/main branch.",
+    "Open .github/workflows/ci.yml and validate its syntax and structure.",
+    "Lint the workflow using actionlint; fix any reported issues.",
+    "If feasible, run the jobs locally with act to verify they succeed (or simulate as closely as possible).",
+    "If a job fails, either fix it with minimal, safe changes or remove the job when it’s obsolete or unsalvageable; keep the workflow consistent and passing.",
+    "Ensure the final ci.yml contains only passing, necessary jobs and clear job names.",
+    "Execute npm run format to format the code.",
+    "Execute npm run lint to lint the code."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "branching": {
+    "prefix": "codex/",
+    "create_new_branch": true,
+    "commit": false,
+    "push": false
+  },
+  "rules": [
+    "Always start work in a new branch prefixed with codex/.",
+    "Do not commit or push if you cannot sign commits."
+  ]
+}
