@@ -39,11 +39,11 @@ async function run() {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chapter-39</title>
-    <meta name="description" content="Chapter-39" />
+    <title>Chapter 39</title>
+    <meta name="description" content="Chapter 39" />
   </head>
   <body>
-    <h1>Chapter-39</h1>
+    <h1>Chapter 39</h1>
     <script>${js}</script>
   </body>
 </html>`;

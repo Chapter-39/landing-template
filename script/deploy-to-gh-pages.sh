@@ -6,7 +6,7 @@ echo 'chapter-39.vasa.me' > CNAME
 echo 'Go to [chapter-39.vasa.me](https://chapter-39.vasa.me)' > README.md
 
 git config --global user.email "chapter-39@vasa.me"
-git config --global user.name "Chapter-39"
+git config --global user.name "Chapter 39"
 
 git init
 # Delete local gh-pages branch if it exists to avoid orphan branch creation failure
