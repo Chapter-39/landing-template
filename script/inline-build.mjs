@@ -41,6 +41,31 @@ async function run() {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chapter 39</title>
     <meta name="description" content="Chapter 39" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)" />
+    <style>
+      :root { color-scheme: light dark; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: #ffffff;
+        color: #111111;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color .2s ease, color .2s ease;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+      h1 { font-size: 2.25rem; margin: 0; }
+      a { color: #0b57d0; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #0b0b0f; color: #e6e6e6; }
+        a { color: #8ab4f8; }
+      }
+    </style>
   </head>
   <body>
     <h1>Chapter 39</h1>
