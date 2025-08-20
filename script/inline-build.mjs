@@ -62,7 +62,7 @@ async function run() {
       h1 { font-size: 2.25rem; margin: 0; }
       a { color: #0b57d0; }
       @media (prefers-color-scheme: dark) {
-        body { background: #0b0b0f; color: #e6e6e6; }
+        body { background: var(--color-bg-dark); color: #e6e6e6; }
         a { color: #8ab4f8; }
       }
     </style>
