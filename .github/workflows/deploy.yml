@@ -18,6 +18,12 @@ jobs:
           node-version: "20"
       - run: npm ci
       - run: npm run build
+      - name: Check for deploy script in package.json
+        run: |
+          if ! grep -q '"deploy"\s*:' package.json; then
+            echo "Error: No 'deploy' script found in package.json. Please define a 'deploy' script to use this workflow."
+            exit 1
+          fi
       - run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
