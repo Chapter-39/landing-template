@@ -1,6 +1,6 @@
 {
-  "name": "minimal-template",
-  "version": "0.1.4",
+  "name": "landing-template",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -31,5 +31,8 @@
     "*.{js,ts,jsx,tsx,vue}": [
       "eslint --fix"
     ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
