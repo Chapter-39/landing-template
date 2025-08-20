@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd dist || exit
+echo "Deploying to GitHub Pages..."
 
 echo 'chapter-39.vasa.me' > CNAME
 echo 'Go to [chapter-39.vasa.me](https://chapter-39.vasa.me)' > README.md
@@ -23,4 +24,5 @@ git push origin gh-pages --force
 # git remote add origin https://github.com/vasagrujic/eaten.fit.git
 # git push -u origin gh-pages
 
+echo "Deployment complete."
 exit
