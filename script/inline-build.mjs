@@ -49,19 +49,7 @@ async function run() {
       body {
         margin: 0;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    <meta name="theme-color" content="${backgroundLight}" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="${backgroundDark}" media="(prefers-color-scheme: dark)" />
-    <style>
-      :root {
-        color-scheme: light dark;
-        --background-light: ${backgroundLight};
-        --background-dark: ${backgroundDark};
-      }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        background: var(--background-light);
+        background: #ffffff;
         color: #111111;
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
@@ -74,7 +62,7 @@ async function run() {
       h1 { font-size: 2.25rem; margin: 0; }
       a { color: #0b57d0; }
       @media (prefers-color-scheme: dark) {
-        body { background: var(--color-bg-dark); color: #e6e6e6; }
+        body { background: #0b0b0f; color: #e6e6e6; }
         a { color: #8ab4f8; }
       }
     </style>
