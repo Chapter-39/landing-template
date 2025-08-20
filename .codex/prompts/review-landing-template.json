@@ -1,0 +1,16 @@
+{
+  "task": "Review landing-template for maintenance readiness",
+  "instructions": [
+    "Read the configuration file .codex.json in the project root and follow its rules.",
+    "Create new branch codex/review-landing-template from origin/main branch.",
+    "Check that all dependencies in package.json are up to date and remove unused ones.",
+    "Verify that linting and formatting scripts are defined and working.",
+    "Confirm that GitHub Actions workflows (build/test/deploy) exist and are passing.",
+    "Review test coverage reports if present, otherwise confirm that minimal smoke tests exist.",
+    "Ensure README.md documents setup, usage, deployment, and maintenance instructions.",
+    "Check that .gitignore, LICENSE, and other standard project files are correct.",
+    "Verify that the codebase builds successfully without errors.",
+    "Prepare a summary report (MAINTENANCE_REPORT.md) with findings and mark the project as ready or not ready for maintenance.",
+    "Do not modify business logic or features, only check readiness and write report."
+  ]
+}
