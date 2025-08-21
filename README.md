@@ -60,6 +60,34 @@ Environment: Uses the `GITHUB_TOKEN` provided by Actions; no secrets required. C
 - Code style: Prettier + ESLint. Run `npm run lint:fix` and `npm run format` before PRs.
 - PRs: Conventional Commits enforced via PR title lint. See `.github/PULL_REQUEST_TEMPLATE.md`.
 
+### Using the shared styles locally
+
+This template can consume `@chapter-39/shared-template` styles via a local npm link without requiring private registry access in CI.
+
+1. In the shared package folder, register the link:
+
+```bash
+(cd /Users/vasa/Developer/@Chapter-39/shared-template && npm link)
+```
+
+2. In this repo, link it (stored under a repo-local prefix):
+
+```bash
+npm run link:shared
+```
+
+3. To unlink and return to a clean state:
+
+```bash
+npm run unlink:shared
+```
+
+Note: The dependency is intentionally not listed in `package.json` to keep CI green without private tokens. The build tolerates missing SCSS by skipping compilation when the import cannot be resolved.
+
+### Deploy configuration
+
+The GitHub Pages deploy script supports an optional `CNAME` via the `CNAME_DOMAIN` environment variable. The workflow sets it to `chapter-39.vasa.me` by default. Change or remove this value in `.github/workflows/deploy.yml` if you fork this template.
+
 ## Project Layout
 
 - `src/`: TypeScript entry (`main.ts`).
