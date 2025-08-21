@@ -78,7 +78,7 @@ async function run() {
   <body>
     <main>
       <h1>Chapter 39</h1>
-    <main>
+    </main>
     <script>${js}</script>
   </body>
 </html>`;
