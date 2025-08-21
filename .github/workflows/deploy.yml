@@ -16,14 +16,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: npm ci
+
+      - name: Install
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
       - run: npm run build:ts
+
       - name: Check for deploy script in package.json
         run: |
           if ! grep -q '"deploy"\s*:' package.json; then
             echo "Error: No 'deploy' script found in package.json. Please define a 'deploy' script to use this workflow."
             exit 1
           fi
+
       - run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
