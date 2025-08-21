@@ -1,5 +1,7 @@
 # Landing Template
 
+Status: Maintenance mode (stable; CI + Dependabot enabled)
+
 Minimal landing template with ESLint, Prettier, Husky + lint-staged, TypeScript, and GitHub Actions CI/CD. Builds a single-file artifact (`dist/index.html`) for simple hosting or GitHub Pages.
 
 ## Requirements
