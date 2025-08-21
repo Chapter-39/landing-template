@@ -1,6 +1,6 @@
 {
   "name": "landing-template",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,11 +13,12 @@
     "build": "npm run build:ts",
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
-    "link:shared": "npm_config_prefix=./.npm-global npm link @chapter-39/shared-template",
-    "unlink:shared": "npm unlink @chapter-39/shared-template",
     "deploy": "chmod +rx script/deploy-to-gh-pages.sh && script/deploy-to-gh-pages.sh",
     "clean:all": "rm -rf dist node_modules && rm package-lock.json",
     "clean:cache": "npm cache clean --force && npm cache verify"
+  },
+  "dependencies": {
+    "@chapter-39/shared-template": "^0.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
