@@ -4,8 +4,7 @@
 (() => {
   try {
     // Apply color scheme class for shared SCSS variables
-    const mq =
-      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+    const mq = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
     const applyScheme = () => {
       const isDark = mq && mq.matches;
       document.documentElement.classList.toggle("dark", isDark);

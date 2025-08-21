@@ -27,3 +27,4 @@ jobs:
       - run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CNAME_DOMAIN: ${{ secrets.CNAME_DOMAIN }}

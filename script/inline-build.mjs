@@ -57,13 +57,13 @@ async function run() {
         } catch (e) {
           console.warn(
             "[build] SCSS detected but not compiled.",
-            e && e.message
-              ? `Reason: ${e.message}`
-              : "Install 'sass' to enable.",
+            e && e.message ? `Reason: ${e.message}` : "Install 'sass' to enable.",
           );
         }
       }
-    } catch {}
+    } catch {
+      // Ignore SCSS probing errors; build continues without styles
+    }
 
     const html = `<!doctype html>
 <html lang="en">

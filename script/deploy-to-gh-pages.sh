@@ -3,8 +3,11 @@
 cd dist || exit
 echo "Deploying to GitHub Pages..."
 
-echo 'chapter-39.vasa.me' > CNAME
-echo 'Go to [chapter-39.vasa.me](https://chapter-39.vasa.me)' > README.md
+# Optionally write CNAME if CNAME_DOMAIN is provided
+if [ -n "$CNAME_DOMAIN" ]; then
+  echo "$CNAME_DOMAIN" > CNAME
+  echo "Go to https://$CNAME_DOMAIN" > README.md
+fi
 
 git config --global user.email "chapter-39@vasa.me"
 git config --global user.name "Chapter 39"
