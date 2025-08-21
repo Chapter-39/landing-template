@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 async function run() {
   const distDir = path.resolve(__dirname, "..", "dist");
   const entryFile = path.resolve(__dirname, "..", "src", "main.ts");
+  const scssFile = path.resolve(__dirname, "..", "src", "index.scss");
   const bundleFile = path.join(distDir, "bundle.js");
   const htmlFile = path.join(distDir, "index.html");
 
@@ -31,44 +32,53 @@ async function run() {
       logLevel: "info",
     });
 
-    console.log("[build] Creating index.html with inlined script…");
+    console.log("[build] Creating index.html with inlined styles and script…");
     const js = await readFile(bundleFile, "utf8");
+
+    // Try to compile SCSS entry if present and `sass` is available
+    let compiledCss = "";
+    try {
+      // Check if SCSS entry exists
+      const hasScss = await readFile(scssFile, "utf8")
+        .then(() => true)
+        .catch(() => false);
+      if (hasScss) {
+        try {
+          const { compileString } = await import("sass");
+          const scssSource = await readFile(scssFile, "utf8");
+          const result = compileString(scssSource, {
+            loadPaths: [
+              path.resolve(__dirname, "..", "node_modules"),
+              path.resolve(__dirname, "..", "src"),
+            ],
+          });
+          compiledCss = result.css;
+          console.log("[build] Inlined SCSS from src/index.scss");
+        } catch (e) {
+          console.warn(
+            "[build] SCSS detected but not compiled.",
+            e && e.message
+              ? `Reason: ${e.message}`
+              : "Install 'sass' to enable.",
+          );
+        }
+      }
+    } catch {}
 
     const html = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chapter 39</title>
     <meta name="description" content="Chapter 39" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)" />
-    <style>
-      :root { color-scheme: light dark; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        background: #ffffff;
-        color: #111111;
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: background-color .2s ease, color .2s ease;
-        display: grid;
-        place-items: center;
-        padding: 2rem;
-      }
-      h1 { font-size: 2.25rem; margin: 0; }
-      a { color: #0b57d0; }
-      @media (prefers-color-scheme: dark) {
-        body { background: #0b0b0f; color: #e6e6e6; }
-        a { color: #8ab4f8; }
-      }
-    </style>
+    ${compiledCss ? `<style>${compiledCss}</style>` : ""}
   </head>
   <body>
-    <h1>Chapter 39</h1>
+    <main>
+      <h1>Chapter 39</h1>
+    <main>
     <script>${js}</script>
   </body>
 </html>`;
