@@ -1,0 +1,64 @@
+// Consumer entrypoint for shared template styles
+// Usage notes:
+// - Your bundler must support Sass (e.g., Vite/webpack with `sass`)
+// - Import this file from your app’s style pipeline or configure your bundler to include it.
+
+// Reset base styles
+@use "@chapter-39/shared-template/styles/reset" as *;
+
+// Core styles and CSS custom properties derived from palette
+@use "@chapter-39/shared-template/styles" as *;
+
+// Color palettes for light/dark (define CSS variables)
+// Note: Inlined palette due to package color partials mismatch in the current tarball.
+// Remove these blocks once the package publishes fixed partials.
+
+// Light mode system colors
+.light {
+  --red: 255, 56, 60;
+  --orange: 255, 141, 40;
+  --yellow: 255, 204, 0;
+  --green: 52, 199, 89;
+  --mint: 0, 200, 179;
+  --teal: 0, 195, 208;
+  --cyan: 0, 192, 232;
+  --blue: 0, 136, 255;
+  --indigo: 97, 85, 245;
+  --purple: 203, 48, 224;
+  --pink: 255, 45, 85;
+  --brown: 172, 127, 94;
+  --gray: 142, 142, 147;
+  --gray-2: 174, 174, 178;
+  --gray-3: 199, 199, 204;
+  --gray-4: 209, 209, 214;
+  --gray-5: 229, 229, 234;
+  --gray-6: 242, 242, 247;
+  --background: 242, 244, 247;
+  --text: 15, 18, 21;
+}
+
+// Dark mode system colors
+.dark {
+  --red: 255, 66, 69;
+  --orange: 255, 146, 48;
+  --yellow: 255, 214, 0;
+  --green: 48, 209, 88;
+  --mint: 0, 218, 195;
+  --teal: 0, 210, 224;
+  --cyan: 60, 211, 254;
+  --blue: 0, 145, 255;
+  --indigo: 107, 93, 255;
+  --purple: 219, 52, 242;
+  --pink: 255, 55, 95;
+  --brown: 183, 138, 102;
+  --gray: 142, 142, 147;
+  --gray-2: 99, 99, 102;
+  --gray-3: 72, 72, 74;
+  --gray-4: 58, 58, 60;
+  --gray-5: 44, 44, 46;
+  --gray-6: 28, 28, 30;
+  --background: 15, 18, 21;
+  --text: 233, 236, 249;
+}
+
+// End palettes

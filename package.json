@@ -9,16 +9,17 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "build:ts": "node script/inline-build.mjs",
-    "build": "npm run build:ts",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
     "deploy": "chmod +rx script/deploy-to-gh-pages.sh && script/deploy-to-gh-pages.sh",
-    "clean:all": "rm -rf dist node_modules && rm package-lock.json",
+    "clean:all": "rm -rf dist coverage node_modules && rm package-lock.json",
     "clean:cache": "npm cache clean --force && npm cache verify"
   },
   "dependencies": {
-    "@chapter-39/shared-template": "^0.2.0"
+    "@chapter-39/shared-template": "0.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
@@ -32,6 +33,7 @@
     "lint-staged": "^16.1.5",
     "prettier": "^3.3.3",
     "sass": "^1.77.6",
+    "vite": "^5.4.0",
     "typescript": "^5.9.2",
     "vitest": "^2.1.9"
   },

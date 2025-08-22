@@ -1,8 +1,0 @@
-// Consumer entrypoint for shared template styles
-// Usage notes:
-// - Your bundler must support Sass (e.g., Vite/webpack with `sass`)
-// - This project’s esbuild inline build does not compile SCSS.
-// - Import this file from your app’s style pipeline or configure your bundler to include it.
-
-// Carga directa de módulos de color (placeholders)
-@use "@chapter-39/shared-template/styles/main" as *;
