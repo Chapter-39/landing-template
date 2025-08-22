@@ -14,14 +14,18 @@ describe("build smoke", () => {
     rmSync(distDir, { recursive: true, force: true });
   });
 
-  it("build produces single-file index.html containing Chapter 39", () => {
+  it("build produces index.html containing Chapter 39 and a script reference", () => {
     execSync("npm run --silent build", { stdio: "inherit" });
 
     expect(existsSync(indexHtml)).toBe(true);
     const html = readFileSync(indexHtml, "utf8");
     expect(html).toContain("<h1>Chapter 39</h1>");
-    expect(html).toContain("<script>");
-    // bundle.js should be cleaned up by the build script
+    // Support both legacy inline build and Vite asset-based build
+    const hasInlineScript = html.includes("<script>");
+    const hasViteModuleScript = html.includes('<script type="module"');
+    expect(hasInlineScript || hasViteModuleScript).toBe(true);
+
+    // Legacy build emitted a temporary bundle.js which was removed; Vite never creates it
     expect(existsSync(bundleJs)).toBe(false);
   });
 });
