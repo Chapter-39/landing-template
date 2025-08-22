@@ -24,6 +24,8 @@ jobs:
 
       - name: Install
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Lint
         run: npm run lint
