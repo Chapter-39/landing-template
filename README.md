@@ -3,6 +3,7 @@
 Status: Maintenance mode (stable; CI + Dependabot enabled)
 
 Minimal landing template with ESLint, Prettier, Husky + lint-staged, TypeScript, and GitHub Actions CI/CD. Builds a single-file artifact (`dist/index.html`) for simple hosting or GitHub Pages.
+Now includes optional Vite dev/build tooling (keeps legacy build available).
 
 ## Requirements
 
@@ -22,7 +23,10 @@ npm run prepare # sets up Husky hooks
 - `lint:fix`: Auto-fix lint issues
 - `format`: Format with Prettier
 - `format:check`: Verify formatting
-- `build`: Produce `dist/index.html` (single file)
+- `dev`: Start Vite dev server
+- `build`: Build via Vite to `dist/`
+- `preview`: Preview Vite production build
+- `build:legacy`: Produce `dist/index.html` (single file)
 - `test`: Run tests once with Vitest
 - `test:ci`: Run tests with coverage
 - `deploy`: Deploy `dist/` to GitHub Pages (used by workflow)
@@ -32,9 +36,21 @@ npm run prepare # sets up Husky hooks
 Build locally:
 
 ```bash
-npm run build
+npm run build # via Vite
 open dist/index.html # or xdg-open on Linux
 ```
+
+Vite development:
+
+```bash
+npm run dev
+# then open the shown local server URL
+```
+
+Vite notes:
+
+- `vite.config.ts` uses `base: "/"` by default. For GitHub project pages, set `base: "/<repo>/"`.
+- SCSS is enabled with `includePaths: ["node_modules"]`. Use `@use "@shared/styles" as *;`.
 
 Run tests:
 
