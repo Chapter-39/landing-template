@@ -15,7 +15,7 @@
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
     "deploy": "chmod +rx script/deploy-to-gh-pages.sh && script/deploy-to-gh-pages.sh",
-    "clean:all": "rm -rf dist node_modules && rm package-lock.json",
+    "clean:all": "rm -rf dist coverage node_modules && rm package-lock.json",
     "clean:cache": "npm cache clean --force && npm cache verify"
   },
   "dependencies": {
