@@ -19,7 +19,7 @@
     "clean:cache": "npm cache clean --force && npm cache verify"
   },
   "dependencies": {
-    "@chapter-39/shared-template": "^0.3.0"
+    "@chapter-39/shared-template": "^0.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
