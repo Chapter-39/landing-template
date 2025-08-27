@@ -1,7 +1,7 @@
 {
   "task": "<task-title>",
   "instructions": [
-    "Read the configuration file .codex.json in the project root and follow its rules.",
+    "Read the configuration file .codex.json located in the .codex subdirectory of the project root and follow its rules.",
     "Create new branch codex/<task-title-slug> from main branch.",
     "...",
     "Execute npm run format to format the code.",

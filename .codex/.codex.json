@@ -6,6 +6,8 @@
     "push": false
   },
   "rules": [
+    "Always read and summarize repository configuration (.codex/.codex.json, AGENTS.md, package.json scripts, .editorconfig) before editing or running non-read commands.",
+    "Do not start editing until you share the summary and the plan.",
     "Always start work in a new branch prefixed with codex/.",
     "Do not commit or push if you cannot sign commits."
   ]

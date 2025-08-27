@@ -1,0 +1,13 @@
+{
+  "task": "Translate all codebase to English",
+  "instructions": [
+    "Read the configuration file .codex.json located in the .codex subdirectory of the project root and follow its rules.",
+    "Create new branch codex/translate-all-to-english from main branch.",
+    "Translate all source code identifiers, strings, and documentation comments from Spanish to English.",
+    "Translate all inline comments, block comments, and documentation (e.g., JSDoc, README) to English.",
+    "Ensure translations preserve technical accuracy and coding conventions.",
+    "Do not alter logic, function signatures, or external API contracts, only text and naming.",
+    "Execute npm run format to format the code.",
+    "Execute npm run lint to lint the code."
+  ]
+}
