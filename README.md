@@ -78,7 +78,7 @@ Environment: Uses the `GITHUB_TOKEN` provided by Actions; no secrets required. C
 
 ### Deploy configuration
 
-The GitHub Pages deploy script supports an optional `CNAME` via the `CNAME_DOMAIN` environment variable. The workflow sets it to `chapter-39.vasa.me` by default. Change or remove this value in `.github/workflows/deploy.yml` if you fork this template.
+The GitHub Pages deploy script supports an optional `CNAME` via the `CNAME_DOMAIN` environment variable. Change or remove this value in `.github/workflows/deploy.yml` if you fork this template.
 
 ## Project Layout
 
